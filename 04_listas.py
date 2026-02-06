@@ -115,6 +115,11 @@ print(my_new_list)
 my_new_list.sort()
 print(my_new_list)
 
+
+#Slice de lista
+print(my_new_list[1:3])
+
+
 #Modificar elemento por indice
 my_other_list[1] = 'Verde'
 print(my_other_list)

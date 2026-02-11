@@ -68,10 +68,3 @@ def mostrar_textos_en_mayusculas (*textos):
         print(texto.upper())
 
 mostrar_textos_en_mayusculas("Hola", "adios", "buenas", "Python")
-
-'''
-----------------------------------
-Funciones de ejemplo IA Y BIG DATA
-----------------------------------
-'''
-

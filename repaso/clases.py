@@ -37,3 +37,9 @@ class Programador(Empleado):
         return f"{self.nombre} gana {self.salario}€ ({self.lenguaje})"
 
 
+class SaldoInsuficiente(Exception):
+
+    def __init__(self, mensaje):
+        self.mensaje = mensaje
+        super().__init__(self.mensaje)
+

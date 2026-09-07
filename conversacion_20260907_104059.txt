@@ -1,0 +1,6 @@
+Tú: Hola
+PyBot: ¡Buenas! ¿Cómo estás?
+Tú: Triste porque no he podido arreglar un error en mi codigo
+PyBot: Siento que te sientas así, ¿quieres hablar de ello?
+Tú: No, adios
+PyBot: Nos vemos, cuídate

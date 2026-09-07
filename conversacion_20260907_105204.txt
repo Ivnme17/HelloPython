@@ -1,0 +1,18 @@
+Tú: hola
+PyBot: ¡Hola! ¿Qué tal?
+Tú: bien
+PyBot: No te he entendido muy bien, ¿puedes reformularlo?
+Tú: estoy algo triste porque me falla el codigo de mi app de python
+PyBot: Python me parece un gran lenguaje
+Tú: ya pero estoy triste
+PyBot: Siento que te sientas así, ¿quieres hablar de ello?
+Tú: cual es tu nombre?
+PyBot: Soy un bot muy simple hecho en Python
+Tú: cual es tu nombre? Como te llamas?
+PyBot: Me llamo PyBot
+Tú: como estas?
+PyBot: Muy bien, gracias por preguntar
+Tú: bueno me voy, un placer PyBot adios.
+PyBot: Nos vemos, cuídate
+Tú: adios
+PyBot: ¡Hasta luego!

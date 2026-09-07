@@ -1,0 +1,10 @@
+Tú: hola
+PyBot: ¡Buenas! ¿Cómo estás?
+Tú: Triste porque mi codigo no ejecuta como deberia
+PyBot: Siento que te sientas así, ¿quieres hablar de ello?
+Tú: si, me gusta python pero a veces es tedioso
+PyBot: Python me parece un gran lenguaje
+Tú: Gracias por la ayuda, adios
+PyBot: Nos vemos, cuídate
+Tú: adios
+PyBot: Nos vemos, cuídate

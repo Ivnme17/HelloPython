@@ -74,10 +74,9 @@ print("Despegue!")
 
 inventario = {"manzanas": 10, "peras": 0, "platanos": 5, "naranjas": 0}
 
-# for producto, cantidad in inventario:
-#     for cantidad in inventario[producto]:
-#         if(cantidad > 0):
-#             print(inventario[producto],":",cantidad)
+for producto, cantidad in inventario.items():# Usamos items() para obtener clave-valor
+        if(cantidad > 0):
+            print(f"{producto}: {cantidad}")
 
 
 
@@ -162,14 +161,52 @@ class Gerente(Empleado):
 empleados = [Comercial("Fulanito",1200,2), Gerente("Menganito",1300,5)]
 
 for empleado in empleados:
-    print(empleado.nombre, empleado.calcular_salario())
+    print(f"El empleado {empleado.nombre} tiene un salario de {empleado.calcular_salario()} euros" )
 
 # 4.4 Ahora usa isinstance() para recorrer esa misma lista y, además del salario, imprime un mensaje distinto según sea Comercial o Gerente (por ejemplo, mencionando sus ventas o su bonus respectivamente).
+for empleado in empleados:
+    if isinstance(empleado,Comercial):
+        print(f"El comercial {empleado.nombre} ha echo {empleado.ventas} ventas ")
+    elif isinstance(empleado,Gerente):
+        print(f"El gerente {empleado.nombre} tiene un bonus de {empleado.bonus}")
+
 
 # Bloque 5 — Ficheros y manejo de errores (10 min)
 
 # 5.1 Escribe una función guardar_empleados(lista_empleados, ruta) que reciba la lista de empleados del bloque 4 y escriba en un fichero de texto una línea por empleado con formato "Nombre: salario calculado".
+empleados = [Comercial("Fulanito",1200,2), Gerente("Menganito",1300,5)]
+
+def guardar_empleado(lista_empleados, ruta):
+    f = open(ruta,"w")
+    for empleado in lista_empleados:
+        f.write(f"{empleado.nombre} : {empleado.calcular_salario()}\n")
+    
+    f.close()
+ruta = r"C:\Users\FX506\Documents\HelloPython\repaso\ficheroEmpleados.txt"
+guardar_empleado(empleados,ruta)
 
 # 5.2 Escribe una función leer_empleados(ruta) que lea ese fichero y, si no existe, capture la excepción con un try/except y devuelva una lista vacía en vez de petar.
 
-# TERMINAR BLOQUE MANIANA Y EMPEZAR CON EL DIA 9
+def leer_empleados(ruta):
+    lista_resultado = []
+    try:
+        f = open(ruta,"r")
+        try:
+            lista_resultado = f.read()
+        finally:
+            f.close() # Se ejecuta siempre tanto si hay error como si no lo hay
+    except FileNotFoundError:
+        lista_resultado = []
+    return lista_resultado
+
+# Observacion usar with open 
+
+# def guardar_empleado(lista_empleados, ruta):
+#     with open(ruta, "w") as f:
+#         for empleado in lista_empleados:
+#             f.write(f"{empleado.nombre} : {empleado.calcular_salario()}\n")
+    # ya no hace falta f.close(), se cierra solo al salir del "with"
+
+rutaVacia = ""
+print(leer_empleados(ruta))
+print(leer_empleados(rutaVacia))

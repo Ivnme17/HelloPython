@@ -60,7 +60,7 @@ for temperaturaMayor in temperaturas_Mayores_Veinticinco :
 # 2.2 Usando un while, simula una cuenta atrás desde 10 hasta 0, imprimiendo cada número, y cuando llegue a 0 imprime "¡Despegue!".
 contador = 10
 
-while(contador >0):
+while(contador >=0):
     print(contador)
     contador -= 1;
 
@@ -88,14 +88,39 @@ def recibe_nombre(nombre):
     mensaje = ""
     def crear_saludo(idioma):
         match idioma:
-            case "es": mensaje ="Hola",nombre
-            case "en": mensaje = "Hello", nombre
-            case _: mensaje = nombre
+            case "es": mensaje =f"Hola, {nombre}"
+            case "en": mensaje = f"Hello, {nombre}"
+            case _: mensaje = f"??? {nombre}"
         return mensaje
     return crear_saludo
 
 nombre_a_recibir = recibe_nombre("Pepe")
 print(nombre_a_recibir("es"))
+
+# Correccion: la funcion esta desordenada primero hay que hacer la funcion crear_saludo y 
+# luego dentro recibe_nombre, no al reves
+# SOLUCION:
+
+# def crear_saludo(idioma):
+#     def recibe_nombre(nombre):
+#         match idioma:
+#             case "es":
+#                 mensaje = f"Hola, {nombre}"
+#             case "en":
+#                 mensaje = f"Hello, {nombre}"
+#             case _:
+#                 mensaje = f"??? {nombre}"
+#         return mensaje
+#     return recibe_nombre
+
+# saludo_es = crear_saludo("es")
+# print(saludo_es("Pepe"))      Hola, Pepe
+
+# saludo_en = crear_saludo("en")
+# print(saludo_en("Pepe"))      Hello, Pepe
+
+# saludo_fr = crear_saludo("fr")
+# print(saludo_fr("Pepe"))      ??? Pepe
 
 # 3.2 Crea una excepción personalizada EdadInvalidaError y una función validar_edad(edad) que la lance si edad < 0 o edad > 120, y si es válida, devuelva la edad.
 

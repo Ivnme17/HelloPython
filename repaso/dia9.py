@@ -91,3 +91,77 @@ desviacion = varianza ** 0.5
 print("Varianza:", varianza)
 print("Desviación típica:", desviacion)
 
+# Ejercicio 3 Comparar datasets
+
+grupo_a = [5,5,5,5,5]
+grupo_b = [1,9,2,8,5]
+
+media_a = sum(grupo_a) / len(grupo_a) # 5
+media_b = sum(grupo_b) / len(grupo_b) # 5
+
+print(f"La media de estas dos listas es la misma, la primera lista da {media_a} y la segunda lista da {media_b}")
+
+
+varianza_a = sum((numero_a - media_a) ** 2 for numero_a in grupo_a) / len(grupo_a)
+desviacion_a = varianza_a ** 0.5
+
+print("La varianza del grupo_a es:",varianza_a)
+
+print("La desviacion del grupo_a es:", desviacion_a)
+
+varianza_b = sum((numero_b - media_b) ** 2 for numero_b in grupo_b) / len(grupo_b)
+desviacion_b = varianza_b ** 0.5
+
+print("La varianza del grupo_b es:",varianza_b)
+
+print("La desviacion del grupo_b es:", desviacion_b)
+
+
+# Ejercicio 4 probabilidad simple
+
+
+resultados_dado = [3, 6, 2, 6, 1, 4, 6, 5, 2, 6]
+
+frecuencias_dado = {}
+for resultado in resultados_dado:
+    frecuencias_dado[resultado] = frecuencias_dado.get(resultado, 0) + 1
+
+# print(frecuencias_dado)  
+
+frecuencia_maxima_dado = max(frecuencias_dado.values())
+
+# print(frecuencia_maxima_dado)  
+
+# SOLUCION MAS ACERTADA
+
+veces_sale_6 = frecuencias_dado.get(6, 0)
+probabilidad = veces_sale_6 / len(resultados_dado) * 100
+print(f"La probabilidad de que salga el lado 6 del dado es de {int(probabilidad)}%")
+
+
+probabilidad = frecuencia_maxima_dado / len(resultados_dado) * 100
+print(f"La probabilidad de que salga el lado 6 del dado es de {int(probabilidad)}%")
+
+
+# Ejercicio 5 probabilidad condicional
+
+alumnos = [
+    {"aprobado": True, "asistio_clase": True},
+    {"aprobado": False, "asistio_clase": False},
+    {"aprobado": True, "asistio_clase": True},
+    {"aprobado": False, "asistio_clase": True},
+    {"aprobado": True, "asistio_clase": True},
+    {"aprobado": False, "asistio_clase": False},
+]
+
+total_asistieron = 0
+aprobados_y_asistieron = 0
+
+for alumno in alumnos:
+    if alumno["asistio_clase"] == True:
+        total_asistieron += 1
+        if alumno["aprobado"] == True:
+            aprobados_y_asistieron += 1
+
+probabilidad = aprobados_y_asistieron / total_asistieron * 100
+print(f"P(aprobado | asistió) = {int(probabilidad)}%")

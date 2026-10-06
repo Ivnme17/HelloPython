@@ -83,5 +83,16 @@ print("Correlación:", correlacion)
 # P(positivo) = P(positivo|enfermo) × P(enfermo) + P(positivo|sano) × P(sano)
 
 # (donde P(sano) = 1 - P(enfermo))
+p_enfermo = 0.01
+p_sano = 1 - p_enfermo
 
-# RESOLVER MANIANA
+p_positivo_dado_enfermo = 0.9
+p_positivo_dado_sano = 0.05
+
+p_positivo = (p_positivo_dado_enfermo * p_enfermo) + (p_positivo_dado_sano * p_sano)
+p_enfermo_dado_positivo = (p_positivo_dado_enfermo * p_enfermo) / p_positivo
+
+print("P(sano):", p_sano)
+print("P(positivo):", p_positivo)
+print("P(enfermo | positivo):", p_enfermo_dado_positivo)
+print(f"Si el test da positivo, la probabilidad real de estar enfermo es del {p_enfermo_dado_positivo * 100:.2f}%")
